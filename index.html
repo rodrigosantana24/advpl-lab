@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetCare - Cuidadores de Confiança para seu Melhor Amigo</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide-react@latest/dist/lucide-react.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC; /* slate-50 */
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://placehold.co/1920x1080/a5b4fc/ffffff?text=Pets+Felizes');
+            background-size: cover;
+            background-position: center;
+        }
+        .icon-circle {
+            background-color: #c7d2fe; /* indigo-200 */
+            color: #4338ca; /* indigo-700 */
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2">
+                <i data-lucide="paw-print" class="w-8 h-8 text-indigo-600"></i>
+                <span class="text-2xl font-bold text-slate-900">Pet Heróis</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#como-funciona" class="hover:text-indigo-600 transition-colors">Como Funciona</a>
+                <a href="#encontre-herois" class="hover:text-indigo-600 transition-colors">Encontrar Heróis</a>
+                <a href="#seja-um-heroi" class="hover:text-indigo-600 transition-colors">Seja um Herói</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="#" class="hover:text-indigo-600 transition-colors">Entrar</a>
+                <a href="#" class="bg-indigo-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-indigo-700 transition-transform transform hover:scale-105">
+                    Cadastre-se
+                </a>
+            </div>
+            <button class="md:hidden" id="mobile-menu-button">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+             <a href="#como-funciona" class="block hover:text-indigo-600 transition-colors">Como Funciona</a>
+             <a href="#encontre-herois" class="block hover:text-indigo-600 transition-colors">Encontrar Heróis</a>
+             <a href="#seja-um-heroi" class="block hover:text-indigo-600 transition-colors">Seja um Herói</a>
+             <hr class="my-2">
+             <a href="#" class="block hover:text-indigo-600 transition-colors">Entrar</a>
+             <a href="#" class="block bg-indigo-600 text-white text-center mt-2 px-5 py-2 rounded-full font-semibold hover:bg-indigo-700">
+                 Cadastre-se
+             </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-bg text-white py-20 md:py-32">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">Cuidadores de confiança para seu pet</h1>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8 text-indigo-100">Encontre pessoas apaixonadas por animais, prontas para dar amor e carinho ao seu bichinho enquanto você está fora.</p>
+                
+                <!-- Search Form -->
+                <form class="max-w-4xl mx-auto bg-white/90 p-4 rounded-xl shadow-2xl grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
+                    <div class="flex items-center space-x-2 text-slate-600">
+                        <i data-lucide="dog" class="w-6 h-6"></i>
+                        <select class="w-full bg-transparent focus:outline-none">
+                            <option>Cachorro</option>
+                            <option>Gato</option>
+                            <option>Pássaro</option>
+                            <option>Exótico</option>
+                        </select>
+                    </div>
+                    <div class="flex items-center space-x-2 text-slate-600 border-t md:border-t-0 md:border-l border-slate-200 pt-4 md:pt-0 md:pl-4">
+                        <i data-lucide="map-pin" class="w-6 h-6"></i>
+                        <input type="text" placeholder="Sua cidade ou CEP" class="w-full bg-transparent focus:outline-none">
+                    </div>
+                    <div class="flex items-center space-x-2 text-slate-600 border-t md:border-t-0 md:border-l border-slate-200 pt-4 md:pt-0 md:pl-4">
+                        <i data-lucide="calendar-days" class="w-6 h-6"></i>
+                        <input type="text" placeholder="Quando precisa?" onfocus="(this.type='date')" onblur="(this.type='text')" class="w-full bg-transparent focus:outline-none">
+                    </div>
+                    <button type="submit" class="col-span-1 md:col-span-1 bg-indigo-600 text-white p-3 rounded-lg font-bold hover:bg-indigo-700 transition-transform transform hover:scale-105 flex items-center justify-center space-x-2">
+                        <i data-lucide="search" class="w-5 h-5"></i>
+                        <span>Buscar</span>
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- How it Works Section -->
+        <section id="como-funciona" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Seu pet seguro em 4 passos</h2>
+                    <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Nossa plataforma simplifica a busca pelo cuidador perfeito.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                    <!-- Step 1 -->
+                    <div class="flex flex-col items-center">
+                        <div class="icon-circle w-20 h-20 rounded-full flex items-center justify-center mb-4">
+                            <i data-lucide="search" class="w-10 h-10"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">1. Busque e Filtre</h3>
+                        <p class="text-slate-600">Use nossos filtros para encontrar cuidadores por localização, tipo de animal e avaliações.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="flex flex-col items-center">
+                        <div class="icon-circle w-20 h-20 rounded-full flex items-center justify-center mb-4">
+                           <i data-lucide="message-square" class="w-10 h-10"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">2. Conecte-se</h3>
+                        <p class="text-slate-600">Converse com os Heróis através do nosso chat seguro para tirar dúvidas e combinar detalhes.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="flex flex-col items-center">
+                        <div class="icon-circle w-20 h-20 rounded-full flex items-center justify-center mb-4">
+                            <i data-lucide="calendar-check" class="w-10 h-10"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">3. Reserve com Segurança</h3>
+                        <p class="text-slate-600">Faça a reserva do período de forma simples e com pagamento online protegido.</p>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="flex flex-col items-center">
+                        <div class="icon-circle w-20 h-20 rounded-full flex items-center justify-center mb-4">
+                            <i data-lucide="camera" class="w-10 h-10"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">4. Relaxe e Acompanhe</h3>
+                        <p class="text-slate-600">Receba fotos e atualizações do seu pet e aproveite sua viagem sem preocupações.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Featured Sitters Section -->
+        <section id="encontre-herois" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Conheça nossos Heróis</h2>
+                    <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Cuidadores verificados e apaixonados por animais, perto de você.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Sitter Card 1 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="https://placehold.co/400x300/e0e7ff/4f46e5?text=Ana+L." alt="Foto da cuidadora Ana" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold">Ana L.</h3>
+                            <p class="text-slate-500 mb-2">Recife, PE</p>
+                            <div class="flex items-center mb-3">
+                                <i data-lucide="star" class="w-5 h-5 text-amber-400 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 text-amber-400 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 text-amber-400 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 text-amber-400 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 text-amber-400 fill-current"></i>
+                                <span class="ml-2 text-sm text-slate-600">42 avaliações</span>
+                            </div>
+                            <p class="text-slate-600 text-sm mb-4">"Amante de cães com quintal espaçoso e seguro. Seu amigo estará em casa!"</p>
+                            <div class="flex space-x-3 text-slate-500">
+                                <i data-lucide="dog" title="Cuida de cachorros"></i>
+                                <i data-lucide="cat" title="Cuida de gatos"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Sitter Card 2 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="https://placehold.co/400x300/c7d2fe/3730a3?text=Bruno+M." alt="Foto do cuidador Bruno" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold">Bruno M.</h3>
+                            <p class="text-slate-500 mb-2">Olinda, PE</p>
+                            <div class="flex items-center mb-3">
+                                <i data-lucide="star" class="w-5 h-5 text-amber-400 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 text-amber-400 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 text-amber-400 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 text-amber-400 fill-current"></i>
+                                <i data-lucide="star-half" class="w-5 h-5 text-amber-400 fill-current"></i>
+                                <span class="ml-2 text-sm text-slate-600">28 avaliações</span>
+                            </div>
+                            <p class="text-slate-600 text-sm mb-4">"Especialista em gatos! Meu apartamento é telado e cheio de brinquedos."</p>
+                            <div class="flex space-x-3 text-slate-500">
+                                <i data-lucide="cat" title="Cuida de gatos"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Sitter Card 3 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="https://placehold.co/400x300/a5b4fc/312e81?text=Carla+S." alt="Foto da cuidadora Carla" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold">Carla S.</h3>
+                            <p class="text-slate-500 mb-2">Jaboatão, PE</p>
+                            <div class="flex items-center mb-3">
+                                <i data-lucide="star" class="w-5 h-5 text-amber-400 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 text-amber-400 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 text-amber-400 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 text-amber-400 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 text-amber-400 fill-current"></i>
+                                <span class="ml-2 text-sm text-slate-600">51 avaliações</span>
+                            </div>
+                            <p class="text-slate-600 text-sm mb-4">"Cuido de todos os tipos de pets, de calopsitas a furões. Experiência com exóticos!"</p>
+                            <div class="flex space-x-3 text-slate-500">
+                                <i data-lucide="dog" title="Cuida de cachorros"></i>
+                                <i data-lucide="cat" title="Cuida de gatos"></i>
+                                <i data-lucide="bird" title="Cuida de pássaros"></i>
+                                <i data-lucide="rabbit" title="Cuida de roedores"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Sitter Card 4 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="https://placehold.co/400x300/818cf8/1e1b4b?text=Diego+P." alt="Foto do cuidador Diego" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold">Diego P.</h3>
+                            <p class="text-slate-500 mb-2">Recife, PE</p>
+                            <div class="flex items-center mb-3">
+                               <i data-lucide="star" class="w-5 h-5 text-amber-400 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 text-amber-400 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 text-amber-400 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 text-amber-400 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 text-amber-400 fill-current"></i>
+                                <span class="ml-2 text-sm text-slate-600">35 avaliações</span>
+                            </div>
+                            <p class="text-slate-600 text-sm mb-4">"Adestrador e passeador. Ofereço serviço de hotel com treinamento básico."</p>
+                            <div class="flex space-x-3 text-slate-500">
+                                <i data-lucide="dog" title="Cuida de cachorros"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Become a Sitter CTA -->
+        <section id="seja-um-heroi" class="bg-indigo-700 text-white">
+            <div class="container mx-auto px-6 py-20 flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Ama animais? Ganhe dinheiro fazendo o que você ama.</h2>
+                    <p class="text-lg text-indigo-200">Junte-se à nossa comunidade de Pet Heróis. Tenha flexibilidade de horários, defina seus próprios preços e receba todo o suporte da nossa plataforma.</p>
+                </div>
+                <div class="md:w-1/2 flex justify-center md:justify-end">
+                    <img src="https://placehold.co/400x400/c7d2fe/3730a3?text=Seja+um+Herói!" alt="Pessoa feliz com um cachorro" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover shadow-2xl">
+                </div>
+            </div>
+            <div class="text-center pb-20">
+                <a href="#" class="bg-white text-indigo-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-indigo-50 transition-transform transform hover:scale-105 inline-block">
+                    Quero ser um Herói
+                </a>
+            </div>
+        </section>
+
+        <!-- Features/Why Choose Us Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Tranquilidade para você, diversão para seu pet</h2>
+                    <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Oferecemos tudo que você precisa para uma experiência segura e confiável.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <div class="flex items-start space-x-4">
+                        <div class="icon-circle p-3 rounded-full flex-shrink-0">
+                            <i data-lucide="shield-check" class="w-7 h-7"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-1">Verificação de Identidade</h3>
+                            <p class="text-slate-600">Todos os Heróis passam por um processo de verificação para garantir mais segurança para você e seu pet.</p>
+                        </div>
+                    </div>
+                     <div class="flex items-start space-x-4">
+                        <div class="icon-circle p-3 rounded-full flex-shrink-0">
+                            <i data-lucide="star" class="w-7 h-7"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-1">Avaliações Reais</h3>
+                            <p class="text-slate-600">Leia as recomendações de outros tutores para escolher o Herói com o perfil ideal para seu bichinho.</p>
+                        </div>
+                    </div>
+                     <div class="flex items-start space-x-4">
+                        <div class="icon-circle p-3 rounded-full flex-shrink-0">
+                            <i data-lucide="map" class="w-7 h-7"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-1">Mapa Interativo</h3>
+                            <p class="text-slate-600">Encontre cuidadores na sua rua ou no seu bairro com nossa integração com mapas.</p>
+                        </div>
+                    </div>
+                     <div class="flex items-start space-x-4">
+                        <div class="icon-circle p-3 rounded-full flex-shrink-0">
+                            <i data-lucide="message-circle" class="w-7 h-7"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-1">Comunicação Segura</h3>
+                            <p class="text-slate-600">Nosso chat protege seus dados e permite uma comunicação direta e eficiente com o cuidador.</p>
+                        </div>
+                    </div>
+                     <div class="flex items-start space-x-4">
+                        <div class="icon-circle p-3 rounded-full flex-shrink-0">
+                            <i data-lucide="wallet" class="w-7 h-7"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-1">Pagamento Protegido</h3>
+                            <p class="text-slate-600">O pagamento fica retido com segurança e só é liberado para o Herói após a conclusão do serviço.</p>
+                        </div>
+                    </div>
+                     <div class="flex items-start space-x-4">
+                        <div class="icon-circle p-3 rounded-full flex-shrink-0">
+                            <i data-lucide="life-buoy" class="w-7 h-7"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-1">Suporte 24/7</h3>
+                            <p class="text-slate-600">Nossa equipe de suporte está sempre disponível para ajudar em qualquer emergência ou dúvida.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-slate-300">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- About -->
+                <div class="col-span-1 md:col-span-2 lg:col-span-1">
+                     <a href="#" class="flex items-center space-x-2 mb-4">
+                        <i data-lucide="paw-print" class="w-7 h-7 text-indigo-400"></i>
+                        <span class="text-xl font-bold text-white">Pet Heróis</span>
+                    </a>
+                    <p class="text-slate-400">Conectando donos de pets a cuidadores apaixonados com segurança e confiança.</p>
+                </div>
+                <!-- Links -->
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Plataforma</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-indigo-400">Como Funciona</a></li>
+                        <li><a href="#" class="hover:text-indigo-400">Seja um Herói</a></li>
+                        <li><a href="#" class="hover:text-indigo-400">Segurança</a></li>
+                        <li><a href="#" class="hover:text-indigo-400">Ajuda</a></li>
+                    </ul>
+                </div>
+                <!-- Company -->
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Empresa</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-indigo-400">Sobre Nós</a></li>
+                        <li><a href="#" class="hover:text-indigo-400">Blog</a></li>
+                        <li><a href="#" class="hover:text-indigo-400">Imprensa</a></li>
+                        <li><a href="#" class="hover:text-indigo-400">Carreiras</a></li>
+                    </ul>
+                </div>
+                <!-- Social -->
+                <div>
+                     <h4 class="font-semibold text-white mb-4">Siga-nos</h4>
+                     <div class="flex space-x-4">
+                        <a href="#" class="hover:text-indigo-400"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+                        <a href="#" class="hover:text-indigo-400"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                        <a href="#" class="hover:text-indigo-400"><i data-lucide="twitter" class="w-6 h-6"></i></a>
+                     </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-slate-700 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-400">
+                <p>&copy; 2024 Pet Heróis. Todos os direitos reservados.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white">Termos de Serviço</a>
+                    <a href="#" class="hover:text-white">Política de Privacidade</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
