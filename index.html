@@ -5,23 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetCare - Cuidadores de Confiança para seu Melhor Amigo</title>
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide-react@latest/dist/lucide-react.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     
-    <!-- Custom Styles -->
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #F8FAFC; /* slate-50 */
+            background-color: #F8FAFC; 
         }
         .hero-bg {
             background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://placehold.co/1920x1080/a5b4fc/ffffff?text=Pets+Felizes');
@@ -29,24 +23,23 @@
             background-position: center;
         }
         .icon-circle {
-            background-color: #c7d2fe; /* indigo-200 */
-            color: #4338ca; /* indigo-700 */
+            background-color: #c7d2fe;
+            color: #4338ca; 
         }
     </style>
 </head>
 <body class="text-slate-800">
 
-    <!-- Header -->
     <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="flex items-center space-x-2">
                 <i data-lucide="paw-print" class="w-8 h-8 text-indigo-600"></i>
-                <span class="text-2xl font-bold text-slate-900">Pet Heróis</span>
+                <span class="text-2xl font-bold text-slate-900">PetCare</span>
             </a>
             <div class="hidden md:flex items-center space-x-6">
                 <a href="#como-funciona" class="hover:text-indigo-600 transition-colors">Como Funciona</a>
-                <a href="#encontre-herois" class="hover:text-indigo-600 transition-colors">Encontrar Heróis</a>
-                <a href="#seja-um-heroi" class="hover:text-indigo-600 transition-colors">Seja um Herói</a>
+                <a href="#encontre-herois" class="hover:text-indigo-600 transition-colors">Encontrar Cuidadores</a>
+                <a href="#seja-um-heroi" class="hover:text-indigo-600 transition-colors">Seja um Cuidador</a>
             </div>
             <div class="hidden md:flex items-center space-x-4">
                 <a href="#" class="hover:text-indigo-600 transition-colors">Entrar</a>
@@ -58,7 +51,6 @@
                 <i data-lucide="menu" class="w-6 h-6"></i>
             </button>
         </nav>
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
              <a href="#como-funciona" class="block hover:text-indigo-600 transition-colors">Como Funciona</a>
              <a href="#encontre-herois" class="block hover:text-indigo-600 transition-colors">Encontrar Heróis</a>
@@ -71,15 +63,12 @@
         </div>
     </header>
 
-    <!-- Main Content -->
     <main>
-        <!-- Hero Section -->
         <section class="hero-bg text-white py-20 md:py-32">
             <div class="container mx-auto px-6 text-center">
                 <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">Cuidadores de confiança para seu pet</h1>
                 <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8 text-indigo-100">Encontre pessoas apaixonadas por animais, prontas para dar amor e carinho ao seu bichinho enquanto você está fora.</p>
                 
-                <!-- Search Form -->
                 <form class="max-w-4xl mx-auto bg-white/90 p-4 rounded-xl shadow-2xl grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
                     <div class="flex items-center space-x-2 text-slate-600">
                         <i data-lucide="dog" class="w-6 h-6"></i>
@@ -106,7 +95,6 @@
             </div>
         </section>
 
-        <!-- How it Works Section -->
         <section id="como-funciona" class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
@@ -114,7 +102,6 @@
                     <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Nossa plataforma simplifica a busca pelo cuidador perfeito.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-                    <!-- Step 1 -->
                     <div class="flex flex-col items-center">
                         <div class="icon-circle w-20 h-20 rounded-full flex items-center justify-center mb-4">
                             <i data-lucide="search" class="w-10 h-10"></i>
@@ -122,7 +109,6 @@
                         <h3 class="text-xl font-bold mb-2">1. Busque e Filtre</h3>
                         <p class="text-slate-600">Use nossos filtros para encontrar cuidadores por localização, tipo de animal e avaliações.</p>
                     </div>
-                    <!-- Step 2 -->
                     <div class="flex flex-col items-center">
                         <div class="icon-circle w-20 h-20 rounded-full flex items-center justify-center mb-4">
                            <i data-lucide="message-square" class="w-10 h-10"></i>
@@ -130,7 +116,6 @@
                         <h3 class="text-xl font-bold mb-2">2. Conecte-se</h3>
                         <p class="text-slate-600">Converse com os Heróis através do nosso chat seguro para tirar dúvidas e combinar detalhes.</p>
                     </div>
-                    <!-- Step 3 -->
                     <div class="flex flex-col items-center">
                         <div class="icon-circle w-20 h-20 rounded-full flex items-center justify-center mb-4">
                             <i data-lucide="calendar-check" class="w-10 h-10"></i>
@@ -138,7 +123,6 @@
                         <h3 class="text-xl font-bold mb-2">3. Reserve com Segurança</h3>
                         <p class="text-slate-600">Faça a reserva do período de forma simples e com pagamento online protegido.</p>
                     </div>
-                    <!-- Step 4 -->
                     <div class="flex flex-col items-center">
                         <div class="icon-circle w-20 h-20 rounded-full flex items-center justify-center mb-4">
                             <i data-lucide="camera" class="w-10 h-10"></i>
@@ -150,7 +134,6 @@
             </div>
         </section>
         
-        <!-- Featured Sitters Section -->
         <section id="encontre-herois" class="py-20">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
@@ -158,7 +141,6 @@
                     <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Cuidadores verificados e apaixonados por animais, perto de você.</p>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Sitter Card 1 -->
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
                         <img src="https://placehold.co/400x300/e0e7ff/4f46e5?text=Ana+L." alt="Foto da cuidadora Ana" class="w-full h-48 object-cover">
                         <div class="p-6">
@@ -179,7 +161,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Sitter Card 2 -->
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
                         <img src="https://placehold.co/400x300/c7d2fe/3730a3?text=Bruno+M." alt="Foto do cuidador Bruno" class="w-full h-48 object-cover">
                         <div class="p-6">
@@ -199,7 +180,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Sitter Card 3 -->
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
                         <img src="https://placehold.co/400x300/a5b4fc/312e81?text=Carla+S." alt="Foto da cuidadora Carla" class="w-full h-48 object-cover">
                         <div class="p-6">
@@ -222,7 +202,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Sitter Card 4 -->
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
                         <img src="https://placehold.co/400x300/818cf8/1e1b4b?text=Diego+P." alt="Foto do cuidador Diego" class="w-full h-48 object-cover">
                         <div class="p-6">
@@ -246,7 +225,6 @@
             </div>
         </section>
 
-        <!-- Become a Sitter CTA -->
         <section id="seja-um-heroi" class="bg-indigo-700 text-white">
             <div class="container mx-auto px-6 py-20 flex flex-col md:flex-row items-center justify-between">
                 <div class="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
@@ -264,7 +242,6 @@
             </div>
         </section>
 
-        <!-- Features/Why Choose Us Section -->
         <section class="py-20 bg-white">
             <div class="container mx-auto px-6">
                  <div class="text-center mb-12">
@@ -332,11 +309,9 @@
 
     </main>
 
-    <!-- Footer -->
     <footer class="bg-slate-800 text-slate-300">
         <div class="container mx-auto px-6 py-12">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <!-- About -->
                 <div class="col-span-1 md:col-span-2 lg:col-span-1">
                      <a href="#" class="flex items-center space-x-2 mb-4">
                         <i data-lucide="paw-print" class="w-7 h-7 text-indigo-400"></i>
@@ -344,7 +319,6 @@
                     </a>
                     <p class="text-slate-400">Conectando donos de pets a cuidadores apaixonados com segurança e confiança.</p>
                 </div>
-                <!-- Links -->
                 <div>
                     <h4 class="font-semibold text-white mb-4">Plataforma</h4>
                     <ul class="space-y-2">
@@ -354,7 +328,6 @@
                         <li><a href="#" class="hover:text-indigo-400">Ajuda</a></li>
                     </ul>
                 </div>
-                <!-- Company -->
                 <div>
                     <h4 class="font-semibold text-white mb-4">Empresa</h4>
                     <ul class="space-y-2">
@@ -364,7 +337,6 @@
                         <li><a href="#" class="hover:text-indigo-400">Carreiras</a></li>
                     </ul>
                 </div>
-                <!-- Social -->
                 <div>
                      <h4 class="font-semibold text-white mb-4">Siga-nos</h4>
                      <div class="flex space-x-4">
@@ -385,10 +357,8 @@
     </footer>
 
     <script>
-        // Initialize Lucide Icons
         lucide.createIcons();
 
-        // Mobile Menu Toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuButton.addEventListener('click', () => {
