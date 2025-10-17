@@ -1,6 +1,7 @@
 #include "Protheus.ch"
 #include "Totvs.ch"
 
+// Primeiros passos no Advpl
 User Function main()
-    MsgInfo("Olá, mundo!")
+    MsgInfo("Ola, mundo!")
 return
