@@ -2,7 +2,6 @@
 #include "TOTVS.ch"
 
 User Function ifelse()
-
     Local nNum1 as Numeric
     Local nNum2 as Numeric
 
@@ -17,5 +16,15 @@ User Function ifelse()
     else
         MsgInfo("Os valores são iguais: " + cValTochar(nNum1), "Resultado")
     endif 
+return
 
+User Function ifelseboolean()
+    Local lCalor := .T.
+    Local lChuva := .F.
+
+    if lCalor == .T. .and. lChuva == .F.
+        MsgInfo("Está um dia quente e sem chuva, então irei à praia!", "Resultado")
+    else 
+        MsgInfo("Hoje não é um bom dia para ir à praia.", "Resultado")
+    endif
 return
