@@ -1,38 +1,6 @@
-// @PRAGMA NOERROR 
+#include "Protheus.ch"
+#include "Totvs.ch"
 
-//=================================================================== 
-//  User Function: MyFirstAdvplCode
-//  Description:   Esta é uma função ADVPL de exemplo que exibe uma
-//                 mensagem de boas-vindas.
-//  Parameters:    Nenhum
-//  Return:        NIL (vazio)
-//===================================================================
-User Function MyFirstAdvplCode()
-    // Declaração de uma variável local para armazenar a mensagem.
-    // O uso de 'Local' é uma boa prática para evitar conflitos de nomes.
-    Local cMessage := "Olá, mundo ADVPL! Este é o seu primeiro código gerado."
-
-    // A função Alert() é usada para exibir uma caixa de diálogo simples
-    // com a mensagem fornecida.
-    Alert(cMessage)
-
-    // Você também pode usar MsgInfo() para uma caixa de mensagem mais completa,
-    // que permite definir um título e ícones.
-    // Exemplo:
-    // MsgInfo("Esta é uma mensagem de informação.", "Exemplo ADVPL", 0, 0)
-
-    // A palavra-chave 'Return' finaliza a execução da função.
-    // Se a função não retornar um valor específico, 'Return' sozinho é suficiente.
-Return
-
-// Para executar esta função, você precisaria chamá-la de algum ponto
-// do seu sistema Protheus, como um ponto de entrada (P.E.) ou outra
-// função de usuário.
-//
-// Exemplo de como chamar (não faz parte do código da função em si):
-//
-// User Function CallMyCode()
-//     MyFirstAdvplCode() // Chama a função definida acima
-// Return
-
-
+User Function main()
+    MsgInfo("Olá, mundo!")
+return
