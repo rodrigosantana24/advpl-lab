@@ -1,4 +1,6 @@
-//===================================================================
+// @PRAGMA NOERROR 
+
+//=================================================================== 
 //  User Function: MyFirstAdvplCode
 //  Description:   Esta é uma função ADVPL de exemplo que exibe uma
 //                 mensagem de boas-vindas.
