@@ -28,3 +28,17 @@ User Function ifelseboolean()
         MsgInfo("Hoje não é um bom dia para ir à praia.", "Resultado")
     endif
 return
+
+User Function Do_Case()
+    Local nNumero := 10
+
+    Do Case
+        Case nNumero > 0
+            msgAlert("O número é positivo.", "Resultado")
+        Case mNumero < 0
+            msgAlert("O número é negativo.", "Resultado")
+        Otherwise
+            msgAlert("O número é zero.", "Resultado")
+    EndCase
+Return
+
