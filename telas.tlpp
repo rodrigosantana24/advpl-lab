@@ -1,0 +1,30 @@
+#include "Protheus.ch"
+#include "TOTVS.ch"
+
+User Function MinhaTela()
+    Local oDlg as Object
+    Local oGet as Object
+    Local oBotao as Object
+
+    Local cNome as Character
+
+    // Permite digitar até 30 caracteres
+    cNome := Space(30)
+
+    DEFINE MSDIALOG oDlg TITLE "Minha Primeira Tela" 
+
+    // Dimensões da tela
+    oDlg:nWidth  := 400
+    oDlg:nHeight := 300
+
+    // Linha 6, Coluna 10
+    @06, @10 SAY "Digite seu nome:" OF oDlg PIXEL
+    // Define o objeto do input e a variável que irá armazenar o valor digitado
+    @06, @60 GET oGet VAR cNome OF oDlg SIZE 70, 10 PIXEL
+    // Botão para enviar o nome
+    @30, @40 BUTTON oBotao PROMPT "OK" OF oDlg PIXEL SIZE 30, 10 ACTION Alert("O nome digitado foi: " + cNome) 
+
+
+    ACTIVATE MSDIALOG oDlg CENTERED
+
+Return
