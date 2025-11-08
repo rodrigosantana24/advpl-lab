@@ -8,7 +8,7 @@ User Function ifelse()
     nNum1 := 30
     nNum2 := 10
 
-    // Estrutura de decisão no Advpl
+    // Estrutura de decisão 
     if nNum1 > nNum2
         MsgInfo("O valor " + cValTochar(nNum1) + " é maior que " + cValTochar(nNum2), "Resultado")
     elseif nNum1 < nNum2
